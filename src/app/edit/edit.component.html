@@ -1,0 +1,39 @@
+<button class='close-btn' mat-icon-button mat-dialog-close color="warn"><mat-icon>close</mat-icon></button>
+
+<h1 [innerHTML]="editMode ? 'Editovat kosmonauta' : 'Přidat kosmonauta'"></h1>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input type="text"
+      matInput 
+      placeholder="Jméno"
+      formControlName="jmeno"
+      >
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text"
+      matInput 
+      placeholder="Příjmení"
+      formControlName="prijmeni"
+      >
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text"
+      [matDatepicker]="myDatePi"
+      matInput 
+      placeholder="Datum narození m/d/yyyy"
+      formControlName="datumNarozeni"
+      >
+      <mat-datepicker-toggle matSuffix [for]="myDatePi"></mat-datepicker-toggle>
+      <mat-datepicker #myDatePi></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input  type="text"
+      matInput 
+      placeholder="Superschopnost"
+      formControlName="superschopnost">
+      
+  </mat-form-field>
+  <button mat-raised-button [disabled]="myForm.invalid" color="primary" [innerHTML]="editMode ? 'Editovat' : 'Přidat'"></button>
+</form>
+

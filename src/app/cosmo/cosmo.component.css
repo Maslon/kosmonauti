@@ -1,0 +1,12 @@
+.inline-btn {
+	font-size: 0.7rem;
+}
+
+.add-btn {
+	height: 2.5rem;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+}
